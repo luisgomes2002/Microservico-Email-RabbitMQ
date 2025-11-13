@@ -6,6 +6,8 @@ import dev.java10x.user.repositorie.UserRepositorie;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
 
@@ -22,5 +24,9 @@ public class UserService {
         userModel = userRepositorie.save(userModel);
         userProducer.publishEvent(userModel);
         return userModel;
+    }
+
+    public List<UserModel> findAll(){
+        return userRepositorie.findAll();
     }
 }
