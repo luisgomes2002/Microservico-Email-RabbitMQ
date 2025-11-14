@@ -20,5 +20,10 @@ spring:
     password: 4ea7-luy1YJG2c67rJaDtk0L26fDqiRb
     virtual-host: vtmsukyt
 
+    flyway:
+      enabled: true
+      locations: classpath:db/migration
+      baseline-on-migrate: true
+
 server:
   port: 8081
